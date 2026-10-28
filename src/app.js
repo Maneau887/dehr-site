@@ -54,7 +54,7 @@ function renderFilters(){
   var box=$('filterList'); if(!box)return;
   var cats=[]; JOBS.forEach(function(j){if(cats.indexOf(j.cat)<0)cats.push(j.cat)});
   var opts=[['all',T._f_all]].concat(cats.map(function(c){return [c,(T._cat||{})[c]||c]}));
-  if(JOBS.some(function(j){return j.house}))opts.push(['house',T._f_house]);
+  if(JOBS.some(function(j){return j.house})&&!JOBS.every(function(j){return j.house}))opts.push(['house',T._f_house]);
   box.innerHTML=opts.map(function(o){return '<button type="button" data-f="'+esc(o[0])+'" aria-pressed="'+(o[0]===filter)+'">'+esc(o[1])+'</button>'}).join('');
 }
 var counts=function(){var c={};JOBS.filter(byCat).forEach(function(j){j.cities.forEach(function(k){c[k]=(c[k]||0)+1})});return c};
