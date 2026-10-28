@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}} — DEHR Ltd</title>
+<meta name="description" content="{{title}} — DEHR Ltd">
+<link rel="canonical" href="{{canonical}}">
+{{alternates}}
+<meta name="theme-color" content="#0F1B2D">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v={{ver}}">
+<link rel="stylesheet" href="/assets/style.css?v={{ver}}">
+</head>
+<body>
+<a class="skip" href="#main">{{skip}}</a>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="{{home}}" aria-label="DEHR Ltd">{{logo_svg}}<span>DEHR<small>LTD</small></span></a>
+    <nav class="langs" aria-label="{{lang_label}}" style="margin-inline-start:auto">{{langs}}</nav>
+    <a class="btn btn-signal" href="{{wa_general_url}}" target="_blank" rel="noopener">{{icon_wa}}<span class="lbl">WhatsApp</span></a>
+  </div>
+</header>
+<main id="main" class="legal">
+  <div class="wrap">
+    <a class="back" href="{{home}}"><span class="arr" aria-hidden="true">←</span> {{back}}</a>
+    <h1>{{title}}</h1>
+    <p class="upd">{{upd}}</p>
+    {{body}}
+  </div>
+</main>
+{{footer}}
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Cookies">
+  <p>{{cookie_text}} <a href="{{priv_url}}">{{cookie_more}}</a></p>
+  <div class="btns"><button type="button" class="yes" data-consent="yes">{{cookie_yes}}</button><button type="button" class="no" data-consent="no">{{cookie_no}}</button></div>
+</div>
+<script>window.DEHR={{data}};</script>
+<script src="/assets/app.js?v={{ver}}" defer></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta_title}}</title>
+<meta name="description" content="{{meta_desc}}">
+<link rel="canonical" href="{{canonical}}">
+{{alternates}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DEHR Ltd">
+<meta property="og:title" content="{{meta_title}}">
+<meta property="og:description" content="{{meta_desc}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{site}}/og.png">
+<meta property="og:locale" content="{{og_locale}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0F1B2D">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/fonts/fonts.css?v={{ver}}">
+<link rel="stylesheet" href="/assets/vendor/maplibre-gl.css">
+<link rel="stylesheet" href="/assets/style.css?v={{ver}}">
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body>
+<a class="skip" href="#main">{{skip}}</a>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="{{home}}" aria-label="DEHR Ltd">
+      {{logo_svg}}
+      <span>DEHR<small>LTD</small></span>
+    </a>
+    <nav class="main" aria-label="{{menu_label}}">
+      <a href="#jobs">{{nav_jobs}}</a>
+      <a href="#route">{{nav_how}}</a>
+      <a href="#employers">{{nav_emp}}</a>
+      <a href="#partners">{{nav_rec}}</a>
+      <a href="#contact">{{nav_contact}}</a>
+    </nav>
+    <nav class="langs" aria-label="{{lang_label}}">{{langs}}</nav>
+    <a class="btn btn-signal" href="{{wa_general_url}}" target="_blank" rel="noopener">{{icon_wa}}<span class="lbl">WhatsApp</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">{{eyebrow}}</p>
+      <h1>{{h1}}</h1>
+      <p class="lead">{{lead}}</p>
+      <div class="paths">
+        <a class="path dark" href="#jobs">
+          <span class="k">{{p1k}}</span>
+          <span class="t">{{p1t}}</span>
+          <span class="d">{{p1d}}</span>
+          <span class="go">{{p1a}} <span class="arr" aria-hidden="true">→</span></span>
+        </a>
+        <a class="path" href="#employers">
+          <span class="k">{{p2k}}</span>
+          <span class="t">{{p2t}}</span>
+          <span class="d">{{p2d}}</span>
+          <span class="go">{{p2a}} <span class="arr" aria-hidden="true">→</span></span>
+        </a>
+      </div>
+    </div>
+
+    <a class="ticket" href="#job-DH-203" aria-label="{{t_label}}">
+      <div class="t-head" aria-hidden="true">DEHR · WORK PASS <i>DH-203</i></div>
+      <div class="t-route" aria-hidden="true">
+        <div><div class="lbl">{{t_from}}</div><div class="city">{{t_from_v}}</div></div>
+        <svg viewBox="0 0 92 24" fill="none"><path d="M2 12h76" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/><path d="M78 4l10 8-10 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="to"><div class="lbl">{{t_to}}</div><div class="city">TLV</div></div>
+      </div>
+      <dl class="t-rows" aria-hidden="true">
+        <div><dt>{{t_job}}</dt><dd>{{t_job_v}}</dd></div>
+        <div><dt>{{t_rate}}</dt><dd>{{t_rate_v}}</dd></div>
+        <div><dt>{{t_house}}</dt><dd>{{t_house_v}}</dd></div>
+        <div><dt>{{t_doc}}</dt><dd>{{t_doc_v}}</dd></div>
+      </dl>
+      <div class="perf" aria-hidden="true"><span></span></div>
+      <div class="barcode" aria-hidden="true"><div class="bars"></div><small>{{t_bar}}</small></div>
+    </a>
+  </div>
+</section>
+
+<section class="stats" aria-label="{{stats_label}}">
+  <div class="wrap">
+    <div class="stat"><b>10+</b><span>{{s1}}</span></div>
+    <div class="stat"><b>1000+</b><span>{{s2}}</span></div>
+    <div class="stat"><b>100+</b><span>{{s3}}</span></div>
+    <div class="stat"><b>4.9</b><span>{{s4}}</span></div>
+  </div>
+</section>
+
+<section id="jobs">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">{{j_eyebrow}}</p>
+      <h2>{{j_h}}</h2>
+    </div>
+    <div class="filters" id="filterList" role="group" aria-label="{{filter_label}}"></div>
+    <div class="mapbox">
+      <div id="map" dir="ltr" role="region" aria-label="{{map_label}}"></div>
+      <div class="cities">
+        <h3>{{m_h}}</h3>
+        <p class="hint">{{m_hint}}</p>
+        <div id="cityList" style="display:contents"></div>
+      </div>
+    </div>
+    <div class="jobs" id="jobList" aria-live="polite">{{noscript_jobs}}</div>
+  </div>
+</section>
+
+<section class="route" id="route">
+  <div class="wrap">
+    <p class="eyebrow">{{r_eyebrow}}</p>
+    <h2>{{r_h}}</h2>
+    <ol class="steps">
+      <li><span class="n" aria-hidden="true">01</span><h3>{{r1t}}</h3><p>{{r1d}}</p></li>
+      <li><span class="n" aria-hidden="true">02</span><h3>{{r2t}}</h3><p>{{r2d}}</p></li>
+      <li><span class="n" aria-hidden="true">03</span><h3>{{r3t}}</h3><p>{{r3d}}</p></li>
+      <li><span class="n" aria-hidden="true">04</span><h3>{{r4t}}</h3><p>{{r4d}}</p></li>
+      <li><span class="n" aria-hidden="true">05</span><h3>{{r5t}}</h3><p>{{r5d}}</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="emp" id="employers">
+  <div class="wrap">
+    <div class="emp-grid">
+      <div>
+        <p class="eyebrow">{{e_eyebrow}}</p>
+        <h2>{{e_h}}</h2>
+        <p class="lead">{{e_lead}}</p>
+        <a class="btn btn-signal" href="{{wa_employer_url}}" target="_blank" rel="noopener">{{icon_wa}}<span>{{e_cta}}</span></a>
+      </div>
+      <ul class="svc">
+        <li>{{sv1}}</li><li>{{sv2}}</li><li>{{sv3}}</li><li>{{sv4}}</li><li>{{sv5}}</li><li>{{sv6}}</li>
+      </ul>
+    </div>
+    <div class="princ">
+      <article><b>01</b><h3>{{pr1t}}</h3><p>{{pr1d}}</p></article>
+      <article><b>02</b><h3>{{pr2t}}</h3><p>{{pr2d}}</p></article>
+      <article><b>03</b><h3>{{pr3t}}</h3><p>{{pr3d}}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <p class="eyebrow">{{a_eyebrow}}</p>
+    <h2>{{a_h}}</h2>
+    <div class="about-grid" style="margin-top:36px">
+      <div><p>{{a_p1}}</p><p>{{a_p2}}</p></div>
+      <figure><blockquote>{{q}}</blockquote><figcaption><cite>{{q_who}}</cite></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="partners" style="padding-top:0">
+  <div class="wrap duo">
+    <div class="panel rec">
+      <p class="eyebrow">{{rc_eyebrow}}</p>
+      <h2>{{rc_h}}</h2>
+      <p>{{rc_d}}</p>
+      <a class="btn btn-ink" href="{{wa_partner_url}}" target="_blank" rel="noopener">{{icon_wa}}<span>{{rc_cta}}</span></a>
+    </div>
+    <div class="panel rev">
+      <p class="eyebrow">{{rv_eyebrow}}</p>
+      <p class="stars" aria-hidden="true">★★★★★</p>
+      <h2>{{rv_h}}</h2>
+      <p>{{rv_d}}</p>
+      <a class="btn btn-ink" href="{{reviews_url}}" target="_blank" rel="noopener"><span>{{rv_cta}}</span> <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">{{c_eyebrow}}</p>
+      <h2>{{c_h}}</h2>
+      <p class="lead">{{c_lead}}</p>
+      <p class="eyebrow" style="margin:28px 0 0">{{c_social}}</p>
+      <div class="social">{{social}}</div>
+    </div>
+    <div>
+      <div class="roles">
+        <a class="main" href="{{wa_candidate_url}}" target="_blank" rel="noopener"><span>{{c_r1}}<small>{{c_r1d}}</small></span><span class="ic">{{icon_wa}}</span></a>
+        <a href="{{wa_employer_url}}" target="_blank" rel="noopener"><span>{{c_r2}}<small>{{c_r2d}}</small></span><span class="ic">{{icon_wa}}</span></a>
+        <a href="{{wa_partner_url}}" target="_blank" rel="noopener"><span>{{c_r3}}<small>{{c_r3d}}</small></span><span class="ic">{{icon_wa}}</span></a>
+      </div>
+      <div class="direct">
+        <a href="tel:{{phone_tel}}"><small>{{c_direct}}</small><b>{{phone}}</b></a>
+        <a href="{{telegram_url}}" target="_blank" rel="noopener"><small>Telegram</small><b>@{{telegram}}</b></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+{{footer}}
+
+<div class="consent" id="consent" hidden role="dialog" aria-live="polite" aria-label="Cookies">
+  <p>{{cookie_text}} <a href="{{priv_url}}">{{cookie_more}}</a></p>
+  <div class="btns"><button type="button" class="yes" data-consent="yes">{{cookie_yes}}</button><button type="button" class="no" data-consent="no">{{cookie_no}}</button></div>
+</div>
+
+<script>window.DEHR={{data}};</script>
+<script src="/assets/vendor/maplibre-gl.js" defer></script>
+<script src="/assets/app.js?v={{ver}}" defer></script>
+</body>
+</html>
